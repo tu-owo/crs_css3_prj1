@@ -1,0 +1,222 @@
+/* ============================================================
+   hw1.css — Ultimate Frisbee Site Stylesheet
+   Linked from: index.html, parks.html, history.html
+   HW2: skip link, nav inline-block, nav img, .grid, .grid img, .flex
+   ============================================================ */
+
+
+/* ---- HW2: Skip to Main Content link ---- */
+/* Visually hidden by default; slides into view on keyboard focus  */
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 0;
+  background-color: #1a3a5c;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 999;
+  transition: top 0.2s ease;
+}
+
+/* Skip link becomes visible when keyboard user tabs to it */
+.skip-link:focus {
+  top: 0;
+}
+
+
+/* ---- Rule 1 (HW1): body — font-family, font-size ---- */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ---- Rule 2 (HW1): header — background-color ---- */
+/* Dark navy: h1 white text gives ~11:1 contrast ratio (WAVE safe) */
+header {
+  background-color: #1a3a5c;
+  padding: 20px 30px 12px 30px;
+  text-align: center;
+}
+
+
+/* ---- Rule 3 (HW1 + HW2 update): nav ---- */
+/* HW2 adds display: inline-block and width: 80% */
+nav {
+  background-color: #0d6e6e;
+  padding: 6px 0;
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+}
+
+
+/* ---- HW2: Descendant selector — nav img ---- */
+/* Styles ONLY images inside nav; does not touch any other images */
+nav img {
+  width: 10%;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+
+/* ---- Rule 4 (HW1): main — background-color, font-size ---- */
+main {
+  background-color: #f0f6fb;
+  font-size: 17px;
+  padding: 24px 40px;
+}
+
+
+/* ---- Rule 5 (HW1): footer — background-color ---- */
+/* Dark navy: white text gives ~11:1 contrast ratio (WAVE safe) */
+footer {
+  background-color: #1a3a5c;
+  padding: 16px 30px;
+  text-align: center;
+}
+
+footer p {
+  color: #ffffff;
+  margin: 0;
+}
+
+
+/* ---- Rule 6 (HW1 → commented out for HW2) ---- */
+/*
+li {
+  display: inline-block;
+  width: auto;
+}
+*/
+
+
+/* ---- Rule 7 (HW1): h1 — text-align, font-family, color ---- */
+/* White on dark navy: ~11:1 contrast (WAVE safe) */
+h1 {
+  text-align: center;
+  font-family: "Palatino Linotype", Palatino, serif;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  font-size: 2.4em;
+  letter-spacing: 2px;
+}
+
+
+/* ---- Rule 8 (HW1): p — line-height ---- */
+p {
+  line-height: 1.75;
+}
+
+
+/* ============================================================
+   Additional supporting styles (bonus, beyond requirements)
+   ============================================================ */
+
+/* Nav anchor links — white on deep teal: ~8.5:1 contrast */
+nav a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+nav a:hover {
+  background-color: #094f4f;
+  text-decoration: underline;
+}
+
+/* h2/h3 inside main — dark navy on light background: ~10:1 contrast */
+h2 {
+  font-family: "Palatino Linotype", Palatino, serif;
+  color: #1a3a5c;
+  border-bottom: 2px solid #0d6e6e;
+  padding-bottom: 4px;
+  margin-top: 32px;
+}
+
+h3 {
+  font-family: "Palatino Linotype", Palatino, serif;
+  color: #0d6e6e;
+}
+
+
+/* ============================================================
+   HW2 — Layout rules: .grid and .flex
+   ============================================================ */
+
+/* ---- HW2 Step 6 + 8: .grid — two-column CSS Grid ---- */
+/* Each column ~40% wide; justify-content centers the columns;
+   align-items: start prevents uneven row stretching;
+   row-gap adds vertical breathing room between rows            */
+.grid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: center;
+  align-items: start;
+  row-gap: 28px;
+  column-gap: 24px;
+  margin-top: 24px;
+}
+
+/* ---- HW2 Step 7: Descendant selector — .grid img ---- */
+/* Styles ONLY images inside .grid; does NOT affect .flex images */
+.grid img {
+  width: 100%;
+}
+
+/* ---- HW2 Step 9: .flex — CSS Flexbox ---- */
+/* flex-wrap: wrap allows cards to reflow on narrow screens;
+   justify-content: space-around distributes cards evenly       */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+/* Flex card styling (bonus) */
+.flex-card {
+  width: 200px;
+  background-color: #ffffff;
+  border: 1px solid #c9dce8;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.flex-card img {
+  width: 100%;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.flex-card h3 {
+  margin-top: 0;
+  font-size: 1em;
+}
+
+.flex-card p {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+/* Grid item bonus styling */
+.grid-item h3 {
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.grid-item p {
+  margin-top: 4px;
+  font-size: 0.95em;
+}
